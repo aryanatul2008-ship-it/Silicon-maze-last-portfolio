@@ -97,12 +97,20 @@ a {
   gap: 18px;
 }
 
-/* Brand logo empty placeholder */
-.brand-logo {
+/* Brand Logo */
+.brand {
+  margin-left: 4px;
+  margin-right: auto;
   display: flex;
-  align-items: center;
-  min-width: 32px;
-  min-height: 32px;
+  text-decoration: none;
+}
+
+.brand svg {
+  display: block;
+  width: clamp(160px, 42vw, 220px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 5px rgba(53, 224, 95, 0.35));
 }
 
 /* Navigation Links */
