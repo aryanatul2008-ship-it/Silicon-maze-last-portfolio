@@ -214,7 +214,7 @@ function initArchives() {
         <!-- Top bar -->
         <div class="archive-panel-top">
           <span class="archive-tag">${escapeHtml(project.archiveTag || `archive/${project.id}`)}</span>
-          <span class="archive-status">${escapeHtml(project.status || 'STATUS: ARCHIVED')}</span>
+          ${project.status ? `<span class="archive-status">${escapeHtml(project.status)}</span>` : ''}
         </div>
 
         <!-- Body: two-column grid (stacked under 720px) -->

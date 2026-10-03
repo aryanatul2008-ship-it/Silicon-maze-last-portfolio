@@ -42,52 +42,18 @@ const PORTFOLIO_DATA = {
     {
       id: "project_001",
       archiveTag: "archive/project_001",
-      name: "Doomsday Vault Kernel",
-      status: "STATUS: LIVE",
-      description: "A resilient client-side offline storage engine designed to cache, index, and retrieve corrupted database fragments during catastrophic network outages.",
-      tech: ["Vanilla JS", "IndexedDB", "Web Workers", "CSS Grid"],
-      screenshot: "images/project_001.svg",
-      imageAlt: "Schematic view of Doomsday Vault Kernel showing IndexedDB storage sectors, encrypted data records, and offline recovery telemetry",
-      github: "https://github.com/aryanatul2008-ship-it",
-      live: "https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/",
-      bullets: [
-        "Constructs zero-dependency encrypted binary partitions within IndexedDB storage.",
-        "Executes automatic background reconciliation when network pings are detected.",
-        "Maintains instant sub-50ms data retrieval across 10,000+ localized telemetry records."
-      ]
-    },
-    {
-      id: "project_002",
-      archiveTag: "archive/project_002",
-      name: "Silicon Maze Navigator",
-      status: "STATUS: DEPLOYED",
-      description: "A heuristic labyrinth navigator and pathfinder computing safe traversal corridors across dynamic hazard grids in the Silicon Maze.",
-      tech: ["JavaScript", "HTML5 Canvas", "A* Search", "CSS Variables"],
-      screenshot: "images/project_002.svg",
-      imageAlt: "Tactical radar display of Silicon Maze Navigator rendering A* heuristic path traversal, dynamic fallout obstacles, and route coordinates",
-      github: "https://github.com/aryanatul2008-ship-it",
-      live: "https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/",
-      bullets: [
-        "Visualizes real-time A* heuristic search and shortest-path calculations on 60fps HTML5 Canvas.",
-        "Simulates dynamic fallout hazards with adaptive obstacle rerouting algorithms.",
-        "Allows full keyboard-driven maze generation and custom corridor seed loading."
-      ]
-    },
-    {
-      id: "project_003",
-      archiveTag: "archive/project_003",
-      name: "Signal Radar Spectrogram",
-      status: "STATUS: PROTOTYPE",
-      description: "An audio spectrogram visualizer analyzing ambient radio signals to intercept and decode broadcast spikes across fallout zones.",
-      tech: ["Web Audio API", "Pure JS", "SVG Telemetry", "Mono Audio"],
-      screenshot: "images/project_003.svg",
-      imageAlt: "Digital radio spectrogram of Signal Radar showing real-time FFT frequency waterfall, decibel spikes, and signal intercept monitoring",
-      github: "https://github.com/aryanatul2008-ship-it",
+      name: "Aroha",
+      status: null,
+      description: "Aroha bridges the gap between learning and hiring. It gives students a custom AI study roadmap, a live coding arena with a no-spoilers AI mentor, and job matching based on the skills they have actually proven.",
+      tech: ["HTML5", "JavaScript", "Tailwind CSS", "Chart.js", "Node.js", "Express.js", "PostgreSQL", "Gemini API"],
+      screenshot: "images/aroha.png",
+      imageAlt: "Aroha dashboard showing a career compass, readiness score and recommended job matches",
+      github: "https://github.com/aryanatul2008-ship-it/Aroha",
       live: null,
       bullets: [
-        "Interfaces directly with the Web Audio API AnalyserNode for fast FFT spectrum analysis.",
-        "Renders dynamic frequency waterfall charts with low CPU overhead and zero dependencies.",
-        "Provides threshold alert indicators when anomalous frequency spikes occur."
+        "Finds your starting point: students pick a target tech role, such as Frontend Developer, and take a quick skill check to see how prepared they are.",
+        "Builds a custom AI roadmap: Google Gemini generates a week-by-week study plan based on the student's current skills and pace.",
+        "Matches skills to real jobs: solving challenges earns XP and raises the Readiness Score, and verified skills are matched against job openings with a compatibility percentage."
       ]
     }
   ],
