@@ -70,7 +70,52 @@
 
   <!-- Main Content Container with Five Base Sections -->
   <main class="container">
-    <section id="profile"></section>
+    <section id="profile" aria-labelledby="hero-title">
+      <!-- 1. Green bordered banner -->
+      <div class="hero-banner" role="status">
+        <span class="banner-status-dot" aria-hidden="true"></span>
+        <span>SILICON MAZE: DOOMSDAY EDITION. Global network failing. Archive stored locally.</span>
+      </div>
+
+      <!-- 2. Terminal box with typing boot sequence -->
+      <div class="terminal-box" id="hero-terminal" aria-label="System Boot Sequence">
+        <div class="terminal-box-header">
+          <span class="terminal-prompt-prefix">SYS_INIT // DOOMSDAY_ARCHIVE_BOOT</span>
+          <span class="terminal-status-tag">SEC-00</span>
+        </div>
+        <div class="terminal-box-body" id="hero-terminal-body" aria-live="polite">
+          <noscript>
+            <div class="term-line">&gt; booting <span class="text-ok">survivor_archive.sys</span></div>
+            <div class="term-line">&gt; scanning network ... <span class="text-ok">0 of 4,812 nodes responding</span></div>
+            <div class="term-line">&gt; local archive found ... <span class="text-ok">OK</span></div>
+            <div class="term-line">&gt; <span class="text-ok">identity verified</span>. loading profile</div>
+          </noscript>
+        </div>
+      </div>
+
+      <!-- 3. Name as large h1 with data-name for glitch effect -->
+      <h1 id="hero-title" class="hero-name" data-name="Aryan Atul">Aryan Atul</h1>
+
+      <!-- 4. Role, intro, interest tags, and action buttons -->
+      <div class="hero-role">FULL-STACK ENGINEER &amp; SYSTEMS BUILDER</div>
+
+      <p class="hero-intro">
+        Navigating the post-apocalyptic digital landscape of the Silicon Maze. Specializing in resilient web applications, accessible terminal interfaces, and robust systems reconstructed from computational fallout. When centralized networks fail, clean code survives.
+      </p>
+
+      <div class="hero-tags" aria-label="Interests & Capabilities">
+        <span class="tag-pill">DISTRIBUTED SYSTEMS</span>
+        <span class="tag-pill">RESILIENT WEB ARCHITECTURE</span>
+        <span class="tag-pill">CLI &amp; TERMINAL UI</span>
+        <span class="tag-pill">LOW-LATENCY APIS</span>
+        <span class="tag-pill">WEB ACCESSIBILITY (A11Y)</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#archives" class="btn btn-solid">Open project archive</a>
+        <a href="#transmit" class="btn btn-outlined">Send a transmission</a>
+      </div>
+    </section>
     <section id="log"></section>
     <section id="arsenal"></section>
     <section id="archives"></section>
