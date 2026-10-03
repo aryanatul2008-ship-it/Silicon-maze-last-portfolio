@@ -72,23 +72,12 @@
   <!-- Main Content Container with Five Base Sections -->
   <main class="container">
     <section id="profile" aria-labelledby="hero-title">
-      <!-- 1. Green bordered banner -->
-      <div class="hero-banner" role="status">
-        <span class="banner-status-dot" aria-hidden="true"></span>
-        <span>SILICON MAZE: DOOMSDAY EDITION. Global network failing. Archive stored locally.</span>
-      </div>
-
-      <!-- 2. Terminal box with typing boot sequence -->
+      <!-- Terminal box with typing boot sequence -->
       <div class="terminal-box" id="hero-terminal" aria-label="System Boot Sequence">
-        <div class="terminal-box-header">
-          <span class="terminal-prompt-prefix">SYS_INIT // DOOMSDAY_ARCHIVE_BOOT</span>
-          <span class="terminal-status-tag">SEC-00</span>
-        </div>
         <div class="terminal-box-body" id="hero-terminal-body" aria-live="polite">
           <noscript>
             <div class="term-line">&gt; booting <span class="text-ok">survivor_archive.sys</span></div>
             <div class="term-line">&gt; scanning network ... <span class="text-ok">0 of 4,812 nodes responding</span></div>
-            <div class="term-line">&gt; local archive found ... <span class="text-ok">OK</span></div>
             <div class="term-line">&gt; <span class="text-ok">identity verified</span>. loading profile</div>
           </noscript>
         </div>
@@ -281,8 +270,9 @@
         </div>
       </div>
 
-      <!-- Centred dim footer: "End of transmission." -->
+      <!-- Centred dim footer: "End of transmission." with edition attribution -->
       <footer class="transmit-footer">
+        <p class="footer-edition">Built for Silicon Maze: Doomsday Edition</p>
         <p class="end-transmission-text">End of transmission.</p>
       </footer>
     </section>

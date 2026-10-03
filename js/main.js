@@ -53,7 +53,6 @@ function initBootSequence() {
   const lines = [
     `&gt; booting <span class="text-ok">survivor_archive.sys</span>`,
     `&gt; scanning network ... <span class="text-ok">0 of 4,812 nodes responding</span>`,
-    `&gt; local archive found ... <span class="text-ok">OK</span>`,
     `&gt; <span class="text-ok">identity verified</span>. loading profile`
   ];
 

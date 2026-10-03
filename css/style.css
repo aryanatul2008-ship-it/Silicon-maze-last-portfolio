@@ -256,52 +256,20 @@ section {
   color: var(--ok);
 }
 
-/* 1. Green bordered banner */
-.hero-banner {
-  border: 1px solid var(--flare);
-  background: rgba(53, 224, 95, 0.05);
-  color: var(--flare);
-  padding: 12px 18px;
-  font-size: 0.88rem;
-  letter-spacing: 0.04em;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
+section#profile {
+  padding-top: 40px;
 }
 
-.banner-status-dot {
-  width: 7px;
-  height: 7px;
-  background-color: var(--flare);
-  flex-shrink: 0;
-}
-
-/* 2. Terminal box: panel background, 1px border, small dim text, min-height 132px */
+/* Terminal box: panel background, 1px border, small dim text, compact padding */
 .terminal-box {
   background-color: var(--panel);
   border: 1px solid var(--line);
   color: var(--dim);
   font-size: 0.85rem;
   font-family: 'IBM Plex Mono', monospace;
-  min-height: 132px;
-  padding: 16px 20px;
-  margin-bottom: 28px;
-}
-
-.terminal-box-header {
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 8px;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: 0.75rem;
-  color: var(--dim);
-  letter-spacing: 0.08em;
-  word-break: break-all;
+  min-height: 82px;
+  padding: 10px 16px;
+  margin-bottom: 20px;
 }
 
 .terminal-box-body {
@@ -1046,9 +1014,19 @@ section {
   border-top: 1px solid var(--line);
 }
 
+.footer-edition {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ok);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
 .end-transmission-text {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.15em;
   color: var(--dim);
   text-transform: uppercase;
