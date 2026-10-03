@@ -7,11 +7,11 @@ const PORTFOLIO_DATA = {
   survivor: {
     name: "Aryan Patil",
     callsign: "OPERATOR // V-774",
-    role: "Full-Stack Engineer & Systems Builder",
+    role: "First-year CSE student",
     status: "ACTIVE_SURVIVOR",
-    location: "SECTOR 04 // APOCALYPSE VAULT",
+    location: "NITK // SURVIVOR SECTOR",
     beacon: "ONLINE",
-    bio: "Broadcast intercepted. Rebuilding digital infrastructure from the wreckage of the Silicon Maze fallout. Specializing in resilient web applications, robust distributed interfaces, and low-latency frontend architecture. When networks collapse, clean code survives."
+    bio: "I'm a first-year CSE student at NITK, exploring every opportunity that comes my way. This archive holds my achievements, what I've built, what I know, and how to reach me."
   },
   systemStats: {
     nodeId: "ARCHIVE-NODE-09",
