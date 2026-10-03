@@ -53,56 +53,52 @@ const PORTFOLIO_DATA = {
   },
   projects: [
     {
-      id: "proj-01",
-      code: "EXP-01",
-      title: "DOOMSDAY VAULT KERNEL",
-      category: "OFFLINE ARCHIVE",
-      status: "OPERATIONAL",
-      badge: "MISSION CRITICAL",
-      summary: "A resilient client-side offline storage engine designed to cache, index, and retrieve corrupted database fragments during catastrophic network outages.",
-      details: "Engineered with zero external dependencies using raw IndexedDB primitives and custom binary packing algorithms to minimize memory footprint.",
-      techStack: ["Vanilla JS", "IndexedDB", "Web Workers", "CSS Grid"],
-      demoUrl: "https://github.com/aryanatul2008-ship-it",
-      repoUrl: "https://github.com/aryanatul2008-ship-it"
+      id: "project_001",
+      archiveTag: "archive/project_001",
+      name: "Doomsday Vault Kernel",
+      status: "STATUS: LIVE",
+      description: "A resilient client-side offline storage engine designed to cache, index, and retrieve corrupted database fragments during catastrophic network outages.",
+      tech: ["Vanilla JS", "IndexedDB", "Web Workers", "CSS Grid"],
+      screenshot: "images/project_001.svg",
+      github: "https://github.com/aryanatul2008-ship-it",
+      live: "https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/",
+      bullets: [
+        "Constructs zero-dependency encrypted binary partitions within IndexedDB storage.",
+        "Executes automatic background reconciliation when network pings are detected.",
+        "Maintains instant sub-50ms data retrieval across 10,000+ localized telemetry records."
+      ]
     },
     {
-      id: "proj-02",
-      code: "EXP-02",
-      title: "SILICON MAZE ESCAPE VECTOR",
-      category: "ALGORITHMIC NAVIGATION",
-      status: "STABLE",
-      badge: "HACKATHON BUILD",
-      summary: "A heuristic labyrinth navigator and pathfinder computing safe traversal corridors across dynamic hazard grids in the Silicon Maze.",
-      details: "Implements A* search and Dijkstra's algorithm rendered over high-performance HTML5 Canvas with real-time visual telemetry and obstacle avoidance.",
-      techStack: ["JavaScript", "HTML5 Canvas", "A* Search", "CSS Variables"],
-      demoUrl: "https://github.com/aryanatul2008-ship-it",
-      repoUrl: "https://github.com/aryanatul2008-ship-it"
+      id: "project_002",
+      archiveTag: "archive/project_002",
+      name: "Silicon Maze Navigator",
+      status: "STATUS: DEPLOYED",
+      description: "A heuristic labyrinth navigator and pathfinder computing safe traversal corridors across dynamic hazard grids in the Silicon Maze.",
+      tech: ["JavaScript", "HTML5 Canvas", "A* Search", "CSS Variables"],
+      screenshot: "images/project_002.svg",
+      github: "https://github.com/aryanatul2008-ship-it",
+      live: "https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/",
+      bullets: [
+        "Visualizes real-time A* heuristic search and shortest-path calculations on 60fps HTML5 Canvas.",
+        "Simulates dynamic fallout hazards with adaptive obstacle rerouting algorithms.",
+        "Allows full keyboard-driven maze generation and custom corridor seed loading."
+      ]
     },
     {
-      id: "proj-03",
-      code: "EXP-03",
-      title: "ANOMALY FREQUENCY RADAR",
-      category: "TELEMETRY SCANNER",
-      status: "CALIBRATING",
-      badge: "EXPERIMENTAL",
-      summary: "Spectrogram visualizer that analyzes ambient audio signals to intercept and decode low-frequency broadcast spikes across radiation zones.",
-      details: "Utilizes the Web Audio API AnalyserNode to construct a live FFT spectrum waterfall display, rendering fast 60fps telemetry without framework overhead.",
-      techStack: ["Web Audio API", "Pure JS", "SVG Telemetry", "Mono Audio"],
-      demoUrl: "https://github.com/aryanatul2008-ship-it",
-      repoUrl: "https://github.com/aryanatul2008-ship-it"
-    },
-    {
-      id: "proj-04",
-      code: "EXP-04",
-      title: "TERMINAL DISPATCH // P2P BEACON",
-      category: "COMMUNICATIONS",
-      status: "DEPLOYED",
-      badge: "LIGHTWEIGHT",
-      summary: "Ultra-low-bandwidth emergency messaging terminal designed to exchange distress logs over encrypted payloads when bandwidth is rationed.",
-      details: "Features keyboard-first commands, local storage persistence, automatic message retry queues, and responsive terminal layout.",
-      techStack: ["HTML5", "CSS3", "Local Storage", "Vanilla JS"],
-      demoUrl: "https://github.com/aryanatul2008-ship-it",
-      repoUrl: "https://github.com/aryanatul2008-ship-it"
+      id: "project_003",
+      archiveTag: "archive/project_003",
+      name: "Signal Radar Spectrogram",
+      status: "STATUS: PROTOTYPE",
+      description: "An audio spectrogram visualizer analyzing ambient radio signals to intercept and decode broadcast spikes across fallout zones.",
+      tech: ["Web Audio API", "Pure JS", "SVG Telemetry", "Mono Audio"],
+      screenshot: "images/project_003.svg",
+      github: "https://github.com/aryanatul2008-ship-it",
+      live: null,
+      bullets: [
+        "Interfaces directly with the Web Audio API AnalyserNode for fast FFT spectrum analysis.",
+        "Renders dynamic frequency waterfall charts with low CPU overhead and zero dependencies.",
+        "Provides threshold alert indicators when anomalous frequency spikes occur."
+      ]
     }
   ],
   terminalLogs: [
