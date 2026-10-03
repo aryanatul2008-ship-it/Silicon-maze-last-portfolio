@@ -5,7 +5,7 @@
 
 const PORTFOLIO_DATA = {
   survivor: {
-    name: "Aryan Partil",
+    name: "Aryan Patil",
     callsign: "OPERATOR // V-774",
     role: "Full-Stack Engineer & Systems Builder",
     status: "ACTIVE_SURVIVOR",
@@ -108,7 +108,7 @@ const PORTFOLIO_DATA = {
   terminalLogs: [
     { time: "00:01:14", tag: "BOOT", message: "Kernel initialization complete. Mounting archival storage..." },
     { time: "00:01:15", tag: "NETWORK", message: "Connecting to Silicon Maze relay nodes... connection acquired." },
-    { time: "00:01:16", tag: "SECURITY", message: "Survivor credentials verified: Aryan Partil (Level 4 clearance)." },
+    { time: "00:01:16", tag: "SECURITY", message: "Survivor credentials verified: Aryan Patil (Level 4 clearance)." },
     { time: "00:01:17", tag: "STATUS", message: "Portfolio telemetry online. Ready for command execution." }
   ]
 };
