@@ -55,6 +55,23 @@ const PORTFOLIO_DATA = {
         "Builds a custom AI roadmap: Google Gemini generates a week-by-week study plan based on the student's current skills and pace.",
         "Matches skills to real jobs: solving challenges earns XP and raises the Readiness Score, and verified skills are matched against job openings with a compatibility percentage."
       ]
+    },
+    {
+      id: "project_002",
+      archiveTag: "archive/project_002",
+      name: "Witness",
+      status: null,
+      description: "Witness is a privacy-first tool that lets activists, journalists and investigators prove a piece of evidence existed at a specific time and has not been changed since. Files are encrypted on the user's own device, so the server never sees them.",
+      tech: ["React", "Vite", "ethers.js", "Solidity", "Hardhat", "IPFS (Pinata)", "Gemini API"],
+      screenshot: "images/witness.png",
+      imageAlt: "Witness app showing evidence being encrypted and anchored to a blockchain",
+      github: "https://github.com/Omega131/Witness.git",
+      live: "https://github.com/user-attachments/assets/a5dd2a68-bbc2-43a5-8e3d-8677ed6bb03e",
+      bullets: [
+        "Encrypts on your device: the browser hashes the evidence (SHA-256) and encrypts it with a random AES-GCM key, so the raw file is never sent to a server.",
+        "Anchors proof on a blockchain: the file's hash and its IPFS storage ID are recorded by a smart contract on the Celo Sepolia or Polygon Amoy test networks, giving a tamper-proof timestamp.",
+        "Works offline and checks for AI: evidence is encrypted locally with no connection and synced later, and text documents can be scanned with Google Gemini for the likelihood they were AI-generated."
+      ]
     }
   ],
   terminalLogs: [
