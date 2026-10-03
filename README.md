@@ -235,8 +235,9 @@ Open that URL in a private window and on a phone to check that every image and l
 | Name | Role | Links |
 | --- | --- | --- |
 | **Aryan Patil** | Design and development | [GitHub](https://github.com/aryanatul2008-ship-it) |
+| **Prathamesh Shete** | Team member | [GitHub](https://github.com/Omega131) |
 
-First-year B.Tech CSE student at NITK. Built for the *Silicon Maze: Doomsday Edition* challenge.
+Built for the *Silicon Maze: Doomsday Edition* challenge. Aryan Patil is a first-year B.Tech CSE student at NITK.
 
 ## License
 
