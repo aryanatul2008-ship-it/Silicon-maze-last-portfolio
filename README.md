@@ -57,8 +57,6 @@ flowchart LR
     G[(GitHub Pages)] -.->|serves static files| V
 ```
 
-> Add a screenshot of the finished site below once it is deployed.
-
 <p align="center">
   <img src="images/screenshot.png" alt="Screenshot of the Last Portfolio homepage" width="800">
 </p>
