@@ -108,7 +108,8 @@ function initArsenalTabs() {
   // Clear tabs container
   tabsContainer.innerHTML = '';
 
-  // Render tab buttons with ARIA semantics
+  // Render tab buttons with ARIA semantics & keyboard navigation
+  const tabButtons = [];
   categories.forEach((category, index) => {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -117,19 +118,43 @@ function initArsenalTabs() {
     btn.setAttribute('id', `tab-${category.toLowerCase()}`);
     btn.setAttribute('aria-controls', 'arsenal-grid');
     btn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+    btn.setAttribute('tabindex', index === 0 ? '0' : '-1');
     btn.textContent = category;
 
-    btn.addEventListener('click', () => {
-      // Switch active tab
-      document.querySelectorAll('#arsenal-tabs .tab-btn').forEach(b => {
+    function activateTab() {
+      tabButtons.forEach(b => {
         b.setAttribute('aria-selected', 'false');
+        b.setAttribute('tabindex', '-1');
       });
       btn.setAttribute('aria-selected', 'true');
-
-      // Render selected category skills
+      btn.setAttribute('tabindex', '0');
+      btn.focus();
       renderCategorySkills(category);
+    }
+
+    btn.addEventListener('click', activateTab);
+
+    // WAI-ARIA tab keyboard navigation (ArrowLeft, ArrowRight, Home, End)
+    btn.addEventListener('keydown', (e) => {
+      let targetIndex = index;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        targetIndex = (index + 1) % tabButtons.length;
+        tabButtons[targetIndex].click();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        targetIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+        tabButtons[targetIndex].click();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        tabButtons[0].click();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        tabButtons[tabButtons.length - 1].click();
+      }
     });
 
+    tabButtons.push(btn);
     tabsContainer.appendChild(btn);
   });
 
@@ -199,7 +224,7 @@ function initArchives() {
           <div class="archive-frame">
             <img 
               src="${escapeHtml(project.screenshot)}" 
-              alt="${escapeHtml(project.name)} interface screenshot" 
+              alt="${escapeHtml(project.imageAlt || `${project.name} interface demonstration and architectural schematic`)}" 
               loading="lazy"
             >
           </div>

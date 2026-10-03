@@ -60,6 +60,7 @@ const PORTFOLIO_DATA = {
       description: "A resilient client-side offline storage engine designed to cache, index, and retrieve corrupted database fragments during catastrophic network outages.",
       tech: ["Vanilla JS", "IndexedDB", "Web Workers", "CSS Grid"],
       screenshot: "images/project_001.svg",
+      imageAlt: "Schematic view of Doomsday Vault Kernel showing IndexedDB storage sectors, encrypted data records, and offline recovery telemetry",
       github: "https://github.com/aryanatul2008-ship-it",
       live: "https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/",
       bullets: [
@@ -76,6 +77,7 @@ const PORTFOLIO_DATA = {
       description: "A heuristic labyrinth navigator and pathfinder computing safe traversal corridors across dynamic hazard grids in the Silicon Maze.",
       tech: ["JavaScript", "HTML5 Canvas", "A* Search", "CSS Variables"],
       screenshot: "images/project_002.svg",
+      imageAlt: "Tactical radar display of Silicon Maze Navigator rendering A* heuristic path traversal, dynamic fallout obstacles, and route coordinates",
       github: "https://github.com/aryanatul2008-ship-it",
       live: "https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/",
       bullets: [
@@ -92,6 +94,7 @@ const PORTFOLIO_DATA = {
       description: "An audio spectrogram visualizer analyzing ambient radio signals to intercept and decode broadcast spikes across fallout zones.",
       tech: ["Web Audio API", "Pure JS", "SVG Telemetry", "Mono Audio"],
       screenshot: "images/project_003.svg",
+      imageAlt: "Digital radio spectrogram of Signal Radar showing real-time FFT frequency waterfall, decibel spikes, and signal intercept monitoring",
       github: "https://github.com/aryanatul2008-ship-it",
       live: null,
       bullets: [

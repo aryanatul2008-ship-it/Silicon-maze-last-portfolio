@@ -33,6 +33,8 @@ html {
   scroll-padding-top: 100px;
   font-size: 15px;
   color: var(--bone);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* --------------------------------------------------------------------------
@@ -45,6 +47,7 @@ body {
   background-repeat: no-repeat;
   color: var(--bone);
   overflow-x: hidden;
+  max-width: 100vw;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 15px;
   line-height: 1.65;
@@ -148,7 +151,10 @@ a {
   color: var(--dim);
   text-decoration: none;
   font-size: 0.95rem;
-  padding-bottom: 4px;
+  padding: 6px 2px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
   border-bottom: 2px solid transparent;
   transition: color 0.15s ease, border-bottom-color 0.15s ease;
 }
@@ -196,6 +202,34 @@ a {
 @media (max-width: 720px) {
   .network-text {
     display: none;
+  }
+}
+
+/* Mobile Navigation (< 600px) */
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .brand svg {
+    width: clamp(140px, 44vw, 170px);
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2px 6px;
+  }
+
+  .nav-links li {
+    display: flex;
+  }
+
+  .nav-links a {
+    min-height: 40px;
+    font-size: 0.86rem;
+    padding: 6px 3px;
   }
 }
 
@@ -262,9 +296,12 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
   font-size: 0.75rem;
   color: var(--dim);
   letter-spacing: 0.08em;
+  word-break: break-all;
 }
 
 .terminal-box-body {
@@ -290,6 +327,10 @@ section {
   display: inline-block;
   margin: 16px 0 8px;
   line-height: 1.1;
+  padding-right: 14px;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-x: clip;
 }
 
 .hero-name::before,
@@ -298,7 +339,7 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 14px;
   height: 100%;
   pointer-events: none;
   opacity: 0;
@@ -386,10 +427,22 @@ section {
   gap: 16px;
 }
 
+@media (max-width: 600px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   padding: 12px 24px;
   font-family: 'Chakra Petch', sans-serif;
   font-weight: 700;
@@ -613,7 +666,8 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 10px 20px;
+  min-height: 42px;
+  padding: 10px 22px;
   cursor: pointer;
   border: 1px solid var(--line);
   background-color: var(--panel);
@@ -845,8 +899,9 @@ section {
 }
 
 .btn-sm {
-  padding: 8px 16px;
-  font-size: 0.82rem;
+  min-height: 40px;
+  padding: 10px 18px;
+  font-size: 0.84rem;
 }
 
 .btn-toggle {
@@ -858,6 +913,7 @@ section {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  min-height: 40px;
   transition: all 0.15s ease;
 }
 
@@ -868,9 +924,16 @@ section {
 }
 
 .btn-toggle[aria-expanded="true"] {
-  background-color: rgba(53, 224, 95, 0.12);
+  background-color: var(--flare);
+  border-color: var(--flare);
+  color: var(--ash);
+  box-shadow: 0 0 10px rgba(53, 224, 95, 0.3);
+}
+
+.btn-toggle[aria-expanded="true"]:hover {
+  background-color: var(--ok);
   border-color: var(--ok);
-  color: var(--ok);
+  color: var(--ash);
 }
 
 /* Stacked under 720px */
@@ -1012,6 +1075,8 @@ section {
   left: 50%;
   bottom: -34vmin;
   width: min(940px, 140vw);
+  max-width: 100vw;
+  overflow: hidden;
   aspect-ratio: 1;
   transform: translateX(-50%);
   opacity: 0.55;
@@ -1081,11 +1146,12 @@ section {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
   }
 
   .pulse-dot {
     animation: none !important;
-    opacity: 1;
+    opacity: 1 !important;
   }
 
   .maze-ring {
@@ -1099,6 +1165,17 @@ section {
   }
 
   .progress-fill {
+    transition: none !important;
+  }
+
+  .archive-frame img,
+  .archive-panel:hover .archive-frame img,
+  .transmit-card:hover .transmit-card-icon,
+  .btn,
+  .tab-btn,
+  .fact-card,
+  .archive-panel {
+    transform: none !important;
     transition: none !important;
   }
 }
