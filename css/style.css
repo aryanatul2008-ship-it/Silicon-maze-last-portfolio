@@ -1,0 +1,839 @@
+/* ==========================================================================
+   SILICON MAZE: DOOMSDAY EDITION — SURVIVOR'S ARCHIVE TERMINAL
+   Plain CSS Architecture with Zero Dependencies
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Google Fonts Import
+   Headings: "Chakra Petch" (500, 700, 700i)
+   Body:     "IBM Plex Mono" (400, 500)
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,700;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+
+/* --------------------------------------------------------------------------
+   Design System: Root Variables
+   -------------------------------------------------------------------------- */
+:root {
+  --ash: #040806;    /* page background */
+  --panel: #09130c;  /* card / container surface */
+  --line: #1b3a25;   /* borders & separators (thin 1px) */
+  --bone: #e4f2e6;   /* primary text */
+  --dim: #84a68d;    /* secondary / muted text */
+  --flare: #35e05f;  /* main green accent */
+  --ok: #9ad8a8;     /* pale green status */
+
+  /* Structural Variables */
+  --max-width: 1040px;
+  --font-heading: 'Chakra Petch', system-ui, -apple-system, sans-serif;
+  --font-body: 'IBM Plex Mono', monospace;
+  --line-height-body: 1.65;
+  --font-size-body: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base Geometry (Strict Square Corners: No Rounded Cards)
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important; /* Enforce square corners across all components */
+}
+
+html {
+  font-size: var(--font-size-body);
+  background-color: var(--ash);
+  color: var(--bone);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: 400;
+  background-color: var(--ash);
+  color: var(--bone);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
+/* --------------------------------------------------------------------------
+   Terminal Background Aesthetics: Subtle CRT Scanlines & Grid
+   -------------------------------------------------------------------------- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.01));
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.75;
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility: Skip Link & High-Contrast Focus Outlines
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  background: var(--flare);
+  color: var(--ash);
+  padding: 8px 16px;
+  font-weight: 700;
+  z-index: 10000;
+  text-decoration: none;
+  border: 1px solid var(--bone);
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--flare);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  color: var(--bone);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+}
+
+p {
+  color: var(--bone);
+  margin-bottom: 1rem;
+}
+
+.text-dim {
+  color: var(--dim);
+}
+
+.text-flare {
+  color: var(--flare);
+}
+
+.text-ok {
+  color: var(--ok);
+}
+
+a {
+  color: var(--flare);
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--ash);
+  background-color: var(--flare);
+}
+
+/* --------------------------------------------------------------------------
+   Layout Containers
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Section Spacing: 72px top, 20px sides, 24px bottom */
+section {
+  padding: 72px 20px 24px;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Terminal HUD: Top Navigation & Status Bar
+   -------------------------------------------------------------------------- */
+.terminal-hud {
+  position: sticky;
+  top: 0;
+  background-color: rgba(4, 8, 6, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  z-index: 900;
+  width: 100%;
+}
+
+.hud-telemetry {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+  background-color: var(--panel);
+}
+
+.telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-beacon {
+  width: 8px;
+  height: 8px;
+  background-color: var(--flare);
+  display: inline-block;
+  box-shadow: 0 0 8px var(--flare);
+  animation: pulseBeacon 2s infinite ease-in-out;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.85); }
+}
+
+.hud-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.brand-sig {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--bone);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-sig:hover {
+  background: transparent;
+  color: var(--flare);
+}
+
+.brand-prefix {
+  color: var(--flare);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--dim);
+  padding: 4px 8px;
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--flare);
+  border-color: var(--line);
+  background: var(--panel);
+}
+
+/* --------------------------------------------------------------------------
+   Section Headers
+   -------------------------------------------------------------------------- */
+.section-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+
+.section-code {
+  font-size: 0.85rem;
+  color: var(--flare);
+  font-weight: 700;
+  background: var(--panel);
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+}
+
+.section-tagline {
+  font-size: 0.85rem;
+  color: var(--dim);
+}
+
+/* --------------------------------------------------------------------------
+   Hero / Operator Archive
+   -------------------------------------------------------------------------- */
+.hero-panel {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  padding: clamp(24px, 5vw, 48px);
+  position: relative;
+}
+
+.terminal-prompt-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--dim);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.terminal-prompt-bar .cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--flare);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hero-title {
+  margin-bottom: 16px;
+  color: var(--bone);
+}
+
+.hero-title span {
+  color: var(--flare);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--ok);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.hero-bio {
+  font-size: 1rem;
+  color: var(--bone);
+  max-width: 780px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  cursor: pointer;
+  border: 1px solid var(--flare);
+  background: var(--flare);
+  color: var(--ash);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--ok);
+  border-color: var(--ok);
+  color: var(--ash);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--flare);
+  border: 1px solid var(--line);
+}
+
+.btn-outline:hover {
+  background: var(--panel);
+  border-color: var(--flare);
+  color: var(--flare);
+}
+
+.system-dossier {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px;
+  background-color: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 24px;
+}
+
+.dossier-node {
+  background-color: var(--panel);
+  padding: 14px 18px;
+}
+
+.dossier-label {
+  font-size: 0.72rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.dossier-value {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bone);
+}
+
+/* --------------------------------------------------------------------------
+   Skills Grid
+   -------------------------------------------------------------------------- */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  padding: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--flare);
+}
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.skill-category-title {
+  font-size: 1.05rem;
+  color: var(--bone);
+}
+
+.skill-code {
+  font-size: 0.75rem;
+  color: var(--flare);
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skill-item-top {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+.skill-level-badge {
+  font-size: 0.72rem;
+  color: var(--ok);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  background: var(--ash);
+}
+
+.skill-item-desc {
+  font-size: 0.8rem;
+  color: var(--dim);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Projects Grid
+   -------------------------------------------------------------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--flare);
+}
+
+.project-card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(27, 58, 37, 0.2);
+}
+
+.project-code {
+  font-size: 0.78rem;
+  color: var(--dim);
+}
+
+.project-status-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--flare);
+  border: 1px solid var(--flare);
+  padding: 2px 8px;
+  letter-spacing: 0.05em;
+  background: rgba(53, 224, 95, 0.05);
+}
+
+.project-body {
+  padding: 24px 20px;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--bone);
+}
+
+.project-subtitle {
+  font-size: 0.85rem;
+  color: var(--ok);
+  margin-bottom: 16px;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--dim);
+  margin-bottom: 20px;
+  line-height: 1.55;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tech-tag {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  background-color: var(--ash);
+  color: var(--dim);
+  border: 1px solid var(--line);
+}
+
+.project-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--ash);
+}
+
+.project-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Live Telemetry / Interactive Console
+   -------------------------------------------------------------------------- */
+.console-panel {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.console-header {
+  background-color: var(--line);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--dim);
+}
+
+.console-output {
+  padding: 20px;
+  height: 200px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  background-color: #030604;
+  border-bottom: 1px solid var(--line);
+}
+
+.console-line {
+  margin-bottom: 6px;
+  display: flex;
+  gap: 12px;
+}
+
+.log-time {
+  color: var(--dim);
+}
+
+.log-tag {
+  color: var(--flare);
+  font-weight: 700;
+}
+
+.console-input-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--panel);
+}
+
+.console-prompt-char {
+  color: var(--flare);
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.console-input {
+  background: transparent;
+  border: none;
+  color: var(--bone);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.console-input:focus {
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   Transmission Dispatch (Contact Form)
+   -------------------------------------------------------------------------- */
+.dispatch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.dispatch-info {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  padding: 32px 24px;
+}
+
+.dispatch-form-panel {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  padding: 32px 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--dim);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background-color: var(--ash);
+  border: 1px solid var(--line);
+  color: var(--bone);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 12px 14px;
+  transition: border-color 0.15s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--flare);
+  outline: 2px solid var(--flare);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-channels {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.channel-label {
+  color: var(--dim);
+  font-size: 0.8rem;
+  min-width: 80px;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.terminal-footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 20px;
+  background-color: var(--panel);
+  margin-top: 60px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: 0.85rem;
+  color: var(--dim);
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design (Zero Horizontal Scroll on Mobile)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  section {
+    padding: 56px 16px 20px;
+  }
+
+  .dispatch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hud-telemetry {
+    font-size: 0.7rem;
+    gap: 8px;
+  }
+
+  .hud-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .skills-wrapper,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility: prefers-reduced-motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .status-beacon,
+  .terminal-prompt-bar .cursor-blink {
+    animation: none !important;
+  }
+
+  body::before {
+    display: none; /* remove scanline flicker */
+  }
+}

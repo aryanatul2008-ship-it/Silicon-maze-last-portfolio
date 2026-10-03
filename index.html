@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#040806">
+  <meta name="description" content="Personal portfolio and computational survivor archive for Aryan Atul — Silicon Maze: Doomsday Edition.">
+  <title>ARCHIVE // ARYAN ATUL [DOOMSDAY EDITION]</title>
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,700;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Core Terminal Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">SKIP TO SURVIVOR DATA (ENTER)</a>
+
+  <!-- Terminal Top HUD -->
+  <header class="terminal-hud" role="banner">
+    <div class="hud-telemetry" aria-label="System Telemetry Status">
+      <div class="telemetry-item">
+        <span class="status-beacon" aria-hidden="true"></span>
+        <span>SYS_STATUS: <strong class="text-flare">BROADCAST_ONLINE</strong></span>
+      </div>
+      <div class="telemetry-item">
+        <span>RELAY: <span class="text-ok">SECTOR-04 // SILICON MAZE</span></span>
+      </div>
+      <div class="telemetry-item">
+        <span>SECURITY: <span id="telemetry-integrity">INTEGRITY 99.8%</span></span>
+      </div>
+      <div class="telemetry-item">
+        <span>EPOCH: <span id="live-clock" class="text-flare">00:00:00 UTC</span></span>
+      </div>
+    </div>
+
+    <nav class="hud-nav" aria-label="Main Navigation">
+      <a href="#archive" class="brand-sig" aria-label="Home Archive">
+        <span class="brand-prefix">[REC-2026]</span>
+        <span>OPERATOR // ARYAN ATUL</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#archive">01.ARCHIVE</a></li>
+        <li><a href="#skills">02.SPECS</a></li>
+        <li><a href="#projects">03.ARTIFACTS</a></li>
+        <li><a href="#console">04.TERMINAL</a></li>
+        <li><a href="#dispatch">05.DISPATCH</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="main-content" class="container">
+
+    <!-- Section: Survivor Dossier / Hero -->
+    <section id="archive" aria-labelledby="heading-archive">
+      <div class="section-meta">
+        <span class="section-code">[SEC-00]</span>
+        <span class="section-tagline">DECRYPTED PERSONNEL DOSSIER</span>
+      </div>
+
+      <div class="hero-panel">
+        <div class="terminal-prompt-bar">
+          <span>root@vault-archive:~$ cat /records/survivor_manifest.log</span>
+          <span class="cursor-blink" aria-hidden="true"></span>
+        </div>
+
+        <h1 id="heading-archive" class="hero-title">
+          SILICON MAZE: <span>DOOMSDAY EDITION</span>
+        </h1>
+        <div class="hero-subtitle">
+          RECORD ARCHIVIST // FULL-STACK SYSTEMS ENGINEER
+        </div>
+        <p class="hero-bio" id="survivor-bio">
+          Accessing survivor datastream... Navigating the post-apocalyptic digital landscape. Rebuilding resilient web applications, accessible user interfaces, and robust systems from the wreckage of the Silicon Maze.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn">INSPECT ARTIFACTS</a>
+          <a href="#dispatch" class="btn btn-outline">TRANSMIT BEACON</a>
+          <a href="https://github.com/aryanatul2008-ship-it" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GITHUB ARCHIVES ↗</a>
+        </div>
+
+        <!-- Telemetry Data Nodes -->
+        <div class="system-dossier" id="survivor-dossier" aria-label="Survivor Specifications">
+          <!-- Dynamically populated or fallback -->
+          <div class="dossier-node">
+            <div class="dossier-label">IDENTITY CALLSIGN</div>
+            <div class="dossier-value text-flare" id="node-callsign">OPERATOR // V-774</div>
+          </div>
+          <div class="dossier-node">
+            <div class="dossier-label">CLEARANCE STATUS</div>
+            <div class="dossier-value text-ok" id="node-clearance">LEVEL 4 // RECOVERY</div>
+          </div>
+          <div class="dossier-node">
+            <div class="dossier-label">GEO SECTOR</div>
+            <div class="dossier-value" id="node-sector">APOCALYPSE VAULT</div>
+          </div>
+          <div class="dossier-node">
+            <div class="dossier-label">SIGNAL INTEGRITY</div>
+            <div class="dossier-value text-flare" id="node-status">100% OPERATIONAL</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Skills / Specifications -->
+    <section id="skills" aria-labelledby="heading-skills">
+      <div class="section-meta">
+        <span class="section-code">[SEC-01]</span>
+        <span class="section-tagline">RECONSTRUCTED TECHNICAL CAPABILITIES</span>
+      </div>
+
+      <h2 id="heading-skills" style="margin-bottom: 24px;">SURVIVAL SPECIFICATIONS</h2>
+
+      <!-- Dynamic Skills Container -->
+      <div class="skills-wrapper" id="skills-container">
+        <!-- Rendered by js/main.js -->
+        <noscript>
+          <div class="skill-card">
+            <h3>JavaScript / Web Architecture</h3>
+            <p>JavaScript ES6+, Semantic HTML5, Modular CSS, Node.js.</p>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- Section: Projects / Artifacts -->
+    <section id="projects" aria-labelledby="heading-projects">
+      <div class="section-meta">
+        <span class="section-code">[SEC-02]</span>
+        <span class="section-tagline">RECOVERED SOFTWARE ARTIFACTS & EXPERIMENTS</span>
+      </div>
+
+      <h2 id="heading-projects" style="margin-bottom: 24px;">MISSION EXPEDITIONS</h2>
+
+      <!-- Dynamic Projects Container -->
+      <div class="projects-grid" id="projects-container">
+        <!-- Rendered by js/main.js -->
+        <noscript>
+          <div class="project-card">
+            <div class="project-body">
+              <h3>Artifacts Loading</h3>
+              <p>Enable JavaScript to load the terminal artifact records.</p>
+            </div>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- Section: Live Terminal Console -->
+    <section id="console" aria-labelledby="heading-console">
+      <div class="section-meta">
+        <span class="section-code">[SEC-03]</span>
+        <span class="section-tagline">INTERACTIVE AUDIT CONSOLE</span>
+      </div>
+
+      <h2 id="heading-console" style="margin-bottom: 24px;">TERMINAL SHELL</h2>
+
+      <div class="console-panel">
+        <div class="console-header">
+          <span>SHELL: /bin/maze-sh (v2.6)</span>
+          <span>COMMANDS: [help, projects, skills, clear, status]</span>
+        </div>
+        <div class="console-output" id="console-output" role="log" aria-live="polite">
+          <!-- Terminal logs injected here -->
+        </div>
+        <form id="console-form" class="console-input-row" autocomplete="off">
+          <label for="terminal-cli" class="console-prompt-char" aria-label="Terminal Prompt">&gt;</label>
+          <input 
+            type="text" 
+            id="terminal-cli" 
+            class="console-input" 
+            placeholder="Type 'help' and press Enter..." 
+            spellcheck="false"
+            autocomplete="off"
+          >
+        </form>
+      </div>
+    </section>
+
+    <!-- Section: Transmission Dispatch / Contact -->
+    <section id="dispatch" aria-labelledby="heading-dispatch">
+      <div class="section-meta">
+        <span class="section-code">[SEC-04]</span>
+        <span class="section-tagline">ENCRYPTED FREQUENCY DISPATCH</span>
+      </div>
+
+      <h2 id="heading-dispatch" style="margin-bottom: 24px;">TRANSMISSION UPLINK</h2>
+
+      <div class="dispatch-grid">
+        <div class="dispatch-info">
+          <h3>EMERGENCY COMM CHANNELS</h3>
+          <p class="text-dim" style="margin-top: 12px;">
+            Communications array standing by. Intercept frequencies or dispatch urgent project transmissions across the post-apocalyptic grid.
+          </p>
+
+          <ul class="contact-channels">
+            <li class="channel-item">
+              <span class="channel-label">OPERATOR:</span>
+              <strong class="text-bone">Aryan Atul</strong>
+            </li>
+            <li class="channel-item">
+              <span class="channel-label">GITHUB:</span>
+              <a href="https://github.com/aryanatul2008-ship-it" target="_blank" rel="noopener noreferrer">@aryanatul2008-ship-it</a>
+            </li>
+            <li class="channel-item">
+              <span class="channel-label">NET NODE:</span>
+              <span class="text-ok">SILICON-MAZE-RELAY-09</span>
+            </li>
+            <li class="channel-item">
+              <span class="channel-label">ENCRYPTION:</span>
+              <span class="text-flare">SHA-256 VAULT VERIFIED</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="dispatch-form-panel">
+          <form id="dispatch-form">
+            <div class="form-group">
+              <label for="sender-callsign" class="form-label">SENDER CALLSIGN / NAME</label>
+              <input type="text" id="sender-callsign" class="form-input" placeholder="e.g. Scavenger / Recruiter" required>
+            </div>
+            <div class="form-group">
+              <label for="sender-frequency" class="form-label">RETURN FREQUENCY / EMAIL</label>
+              <input type="email" id="sender-frequency" class="form-input" placeholder="name@domain.com" required>
+            </div>
+            <div class="form-group">
+              <label for="dispatch-payload" class="form-label">DISPATCH PAYLOAD / MESSAGE</label>
+              <textarea id="dispatch-payload" class="form-textarea" placeholder="Input broadcast data..." required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">
+              DISPATCH SIGNAL
+            </button>
+            <div id="dispatch-feedback" style="margin-top: 12px; font-size: 0.85rem;" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Terminal Footer -->
+  <footer class="terminal-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-status">
+        <span class="status-beacon" aria-hidden="true"></span>
+        <span>VAULT ARCHIVE NODE // SILICON MAZE DOOMSDAY EDITION</span>
+      </div>
+      <div>
+        <span>BUILD: VANILLA HTML5 / CSS3 / ES6+</span>
+      </div>
+      <div>
+        <a href="#archive">▲ RETURN TO TOP</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
