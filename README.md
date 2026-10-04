@@ -15,7 +15,7 @@
 <summary><h2>Table of Contents</h2></summary>
 
 - [Architecture Diagram](#architecture-diagram)
-- [Demo Video](#demo-video)
+
 - [The Problem](#the-problem)
 - [Our Solution](#our-solution)
 - [What runs on the server side?](#what-runs-on-the-server-side)
@@ -61,11 +61,6 @@ flowchart LR
   <img src="images/screenshot.png" alt="Screenshot of the Last Portfolio homepage" width="800">
 </p>
 
-## Demo Video
-
-> Add your demo link here, or delete this section if you do not have one.
-
-[Watch the demo](YOUR-DEMO-VIDEO-LINK)
 
 **Live site:** [https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/](https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/)
 
