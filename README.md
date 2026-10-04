@@ -67,7 +67,7 @@ flowchart LR
 
 [Watch the demo](YOUR-DEMO-VIDEO-LINK)
 
-**Live site:** [YOUR-LIVE-URL](YOUR-LIVE-URL)
+**Live site:** [https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/](https://aryanatul2008-ship-it.github.io/Silicon-maze-last-portfolio/)
 
 ## The Problem
 
